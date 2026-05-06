@@ -1,9 +1,9 @@
 {
-  "id": "delayed-daily-note-opener",
-  "name": "Delayed Daily Note Opener",
-  "version": "1.0.0",
+  "id": "rollover-daily-todos-helper",
+  "name": "Rollover Daily Todos Helper",
+  "version": "1.1.0",
   "minAppVersion": "1.5.0",
-  "description": "Open today's daily note after a configurable startup delay so rollover workflows run reliably on desktop and mobile.",
+  "description": "Unofficial companion for Rollover Daily Todos: opens today's daily note after a startup delay so rollover workflows run reliably on desktop and mobile.",
   "author": "Eugen Schmalz",
   "authorUrl": "https://github.com/eugenschmalz",
   "isDesktopOnly": false

@@ -1,43 +1,41 @@
-# Delayed Daily Note Opener
+# Rollover Daily Todos Helper
 
-Open today's daily note after a configurable delay on Obsidian startup.
+An unofficial companion for [Rollover Daily Todos](https://github.com/lumoe/obsidian-rollover-daily-todos).
 
-This plugin is designed for users who rely on startup timing between:
+It opens today's daily note after a configurable startup delay so `Rollover Daily Todos` can reliably catch the note-creation event on desktop and Android.
 
-- Core plugin `Daily Notes`
-- Community plugins that depend on daily note creation (for example `obsidian-rollover-daily-todos`)
-- Mobile vault sync/indexing timing (Android)
+![Rollover Daily Todos Helper settings](assets/settings.png)
 
 ## Why this plugin exists
 
-On some setups, especially Android + synced vaults, today's note can be created too early during startup.
-When that happens, plugins that listen for note creation can miss the event.
+On some setups (especially Android + synced vaults), today's note can be created very early during startup.
+When that happens, plugins that listen to file creation events can miss the event.
 
-This plugin delays the "open today's daily note" command so other plugins have time to load first.
+This plugin delays the "open today's daily note" action so startup order is more reliable.
 
 ## Features
 
 - Configurable startup delay (`0-120` seconds)
 - Works on desktop and mobile (`isDesktopOnly: false`)
-- Uses command execution (default command ID: `daily-notes`)
+- Executes daily-note open command (default command ID: `daily-notes`)
 - Fallback command resolution by prefix (`daily-notes:*`)
 - Optional skip if today's note is already open
-- Optional second command: run rollover after opening
+- Optional second command (run rollover after opening)
 - Manual command and settings button: **Run now**
 
 ## Installation (manual)
 
 1. Open your vault folder.
 2. Create plugin directory:
-   - `.obsidian/plugins/delayed-daily-note-opener`
+   - `.obsidian/plugins/rollover-daily-todos-helper`
 3. Copy these files into that directory:
    - `manifest.json`
    - `main.js`
    - `styles.css`
 4. Restart Obsidian (or reload community plugins).
-5. Enable **Delayed Daily Note Opener** in Community Plugins.
+5. Enable **Rollover Daily Todos Helper** in Community Plugins.
 
-## Recommended setup (for rollover workflows)
+## Recommended setup
 
 1. Keep **Daily Notes** core plugin enabled.
 2. In Obsidian app behavior, open **last file** on startup (not automatic daily note).
@@ -58,19 +56,13 @@ This plugin delays the "open today's daily note" command so other plugins have t
 
 ## Command IDs and localization
 
-Obsidian command names can be localized (German/Russian/etc.), but command IDs are stable enough in most setups.
-If your environment differs, set command ID manually in plugin settings.
+Obsidian command names can be localized, while command IDs are usually stable.
+If your setup differs, set command ID manually in plugin settings.
 
 ## Known limitations
 
-- If today's daily note already exists and your rollover plugin only reacts to file creation, opening it later may not trigger rollover automatically.
-- In that case, either:
-  - enable **Run rollover after open**, or
-  - run rollover manually from command palette.
-
-## Development notes
-
-This plugin intentionally uses plain JavaScript (`main.js`) and no build step, for easy audit and quick local installation.
+- If today's note already exists and your rollover plugin reacts only to file creation, opening it later may not trigger rollover automatically.
+- In that case, either enable **Run rollover after open** or run rollover manually from command palette.
 
 ## License
 
