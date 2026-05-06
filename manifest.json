@@ -1,0 +1,10 @@
+{
+  "id": "delayed-daily-note-opener",
+  "name": "Delayed Daily Note Opener",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Open today's daily note after a configurable startup delay so rollover workflows run reliably on desktop and mobile.",
+  "author": "Eugen Schmalz",
+  "authorUrl": "https://github.com/eugenschmalz",
+  "isDesktopOnly": false
+}
